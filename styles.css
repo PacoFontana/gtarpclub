@@ -32,7 +32,7 @@ nav ul li a {
 
 /* Encabezado con fondo */
 .header {
-    background-image: url('/images/background.png'); /* Reemplaza 'background.jpg' con tu imagen de fondo */
+    background-image: url('images/background.png'); /* Reemplaza 'background.jpg' con tu imagen de fondo */
     background-size: cover;
     background-position: center;
     color: white;
