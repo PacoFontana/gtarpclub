@@ -25,14 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
         clearInterval(creadoresInterval);
         carouselCreadoresItems.forEach(item => item.style.display = "none");
         carouselUsuariosItems[currentUsuariosIndex].style.display = "block";
-        usuariosInterval = setInterval(showNextUsuariosItem, 10000);
+        usuariosInterval = setInterval(showNextUsuariosItem, 6000);
     }
 
     function startCreadoresCarousel() {
         clearInterval(usuariosInterval);
         carouselUsuariosItems.forEach(item => item.style.display = "none");
         carouselCreadoresItems[currentCreadoresIndex].style.display = "block";
-        creadoresInterval = setInterval(showNextCreadoresItem, 10000);
+        creadoresInterval = setInterval(showNextCreadoresItem, 6000);
     }
 
     // Iniciar carrusel de usuarios por defecto

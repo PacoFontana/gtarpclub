@@ -186,6 +186,11 @@ nav ul li a {
         padding: 50px 20px;
     }
 
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
     .carousel-controls button {
         padding: 6px 12px;
         margin: 0 5px;
@@ -196,7 +201,12 @@ nav ul li a {
         height: 80px;
     }
 
+    .team-vertical {
+        padding-right: 25%;
+    }
+
     .discord-widget iframe {
         height: 350px;
+        padding-left: 5%;
     }
 }
