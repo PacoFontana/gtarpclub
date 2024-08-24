@@ -7,6 +7,23 @@ body {
     color: white;
 }
 
+.audio-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #101010; /* Color de fondo del contenedor */
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  audio {
+    width: 80%; /* Ancho del reproductor */
+    height: 20px; /* Altura para hacerlo más cuadrado */
+  } 
+
 /* Menú de navegación */
 nav {
     background-color: #ffba00;
@@ -40,6 +57,24 @@ nav ul li a {
     text-align: center;
     padding: 100px 20px;
 }
+
+  /* Para navegadores basados en WebKit (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Fondo del track del scrollbar (semi-transparente) */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #535353; /* Color del "thumb" del scrollbar (semi-transparente) */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #535353; /* Color del "thumb" al hacer hover */
+  } 
 
 .logo {
     max-width: 400px; /* Aumenta el tamaño del logo */
