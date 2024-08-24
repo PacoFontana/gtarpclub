@@ -44,7 +44,19 @@ nav ul li a {
 .logo {
     max-width: 400px; /* Aumenta el tamaño del logo */
     margin-bottom: 20px;
+    animation: caidaDesdeArriba 1.5s ease forwards;
     padding-top: 1px;
+}
+
+@keyframes caidaDesdeArriba {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0; /* Comenzar con la imagen transparente */
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1; /* Terminar con la imagen visible */
+    }
 }
 
 /* Sección de actividades */
