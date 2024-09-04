@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTARP CLUB⁺ - Boost de servidor</title>
+    <title>Boost - GTARP CLUB</title>
     <style>
         body {
             display: flex;
@@ -36,6 +36,33 @@
     </div>
 
     <script>
+        function obtenerFechaHoraAR() {
+            const ahora = new Date();
+            const opciones = {
+                timeZone: 'America/Argentina/Buenos_Aires',
+                hour: '2-digit',
+                minute: '2-digit',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour12: false // Esto asegura que la hora se muestra en formato de 24 horas
+            };
+
+            const formatter = new Intl.DateTimeFormat('es-AR', opciones);
+            const partes = formatter.formatToParts(ahora);
+
+            // Depuración: Mostrar todas las partes de la fecha y hora
+            console.log(partes);
+
+            // Extraer valores del día y la hora
+            const dia = parseInt(partes.find(part => part.type === 'day').value, 10);
+            const hora = parseInt(partes.find(part => part.type === 'hour').value, 10);
+
+            console.log(`Día: ${dia}, Hora: ${hora}`); // Depuración: Mostrar día y hora
+
+            return { dia, hora };
+        }
+
         let contador = 5;
         const contadorElement = document.getElementById("contador");
         const mensajeElement = document.getElementById("mensaje");
@@ -47,10 +74,8 @@
             if (contador === 0) {
                 clearInterval(interval);
 
-                // Obtener día y hora actual
-                const fecha = new Date();
-                const dia = fecha.getDate(); // Día actual
-                const hora = fecha.getHours(); // Hora actual
+                // Obtener día y hora en la zona horaria de America/Argentina/Buenos_Aires
+                const { dia, hora } = obtenerFechaHoraAR();
 
                 // Generar el código
                 const codigo = dia * hora;
