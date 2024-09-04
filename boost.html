@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTARP CLUB⁺ - Boost de servidor</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #101010;
+            color: #ffba00;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #contador {
+            font-size: 48px;
+        }
+        #codigo {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        #mensaje {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="contador">5</div>
+        <div id="mensaje">Estamos generando tu código...</div>
+    </div>
+
+    <script>
+        let contador = 5;
+        const contadorElement = document.getElementById("contador");
+        const mensajeElement = document.getElementById("mensaje");
+
+        const interval = setInterval(() => {
+            contador--;
+            contadorElement.textContent = contador;
+
+            if (contador === 0) {
+                clearInterval(interval);
+
+                // Obtener día y hora actual
+                const fecha = new Date();
+                const dia = fecha.getDate(); // Día actual
+                const hora = fecha.getHours(); // Hora actual
+
+                // Generar el código
+                const codigo = dia * hora;
+
+                // Reemplazar el contador por el código
+                contadorElement.textContent = `Código: ${codigo}`;
+                mensajeElement.textContent = "Utiliza este código para boostear la publicidad de tu servidor.";
+            }
+        }, 1000); // Cada 1 segundo
+    </script>
+</body>
+</html>
