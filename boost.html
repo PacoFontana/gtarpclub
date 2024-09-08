@@ -31,7 +31,7 @@
 </head>
 <body>
     <div>
-        <div id="contador">5</div>
+        <div id="contador">3</div>
         <div id="mensaje">Estamos generando tu código...</div>
     </div>
 
@@ -58,12 +58,12 @@
             const dia = parseInt(partes.find(part => part.type === 'day').value, 10);
             const hora = parseInt(partes.find(part => part.type === 'hour').value, 10);
 
-            console.log(`Día: ${dia}, Hora: ${hora}`); // Depuración: Mostrar día y hora
+            console.log(`CD: ${dia}, RP: ${hora}`); // Depuración: Mostrar día y hora
 
             return { dia, hora };
         }
 
-        let contador = 5;
+        let contador = 3;
         const contadorElement = document.getElementById("contador");
         const mensajeElement = document.getElementById("mensaje");
 
