@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normativas de Roleplay - GTARP CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #101010;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffba00;
+            margin-bottom: 40px;
+            font-size: 3rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .accordion {
+            background-color: #2c2c2c;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .accordion:hover {
+            background-color: #444444;
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .active, .accordion:active {
+            background-color: #555555;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: #1c1c1c;
+            display: none;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .panel p {
+            padding: 15px;
+            margin: 0;
+            font-size: 18px;
+            border-bottom: 1px solid #333333;
+            animation: slideInLeft 0.5s ease-in-out;
+        }
+
+        .panel p:last-child {
+            border-bottom: none;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta-button {
+            background-color: #ffba00;
+            color: black;
+            padding: 15px 30px;
+            margin: 10px 10px 10px 10px;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: #e0a300;
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-button:active {
+            transform: scale(1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Normativas de Roleplay</h1>
+
+        <button class="accordion">1. Posibles Normas Internas de Cada Servidor</button>
+        <div class="panel">
+            <p><strong>Uso de contactos:</strong> Prohibido utilizar contactos como Lester o Merryweather para obtener ventajas injustas.</p>
+            <p><strong>Qué hacer al morir:</strong> Dependerá de las reglas de reaparición de cada servidor.</p>
+            <p><strong>Zonas seguras:</strong> Consulta las zonas seguras específicas en tu servidor.</p>
+        </div>
+
+        <button class="accordion">2. Vocabulario de Rol</button>
+        <div class="panel">
+            <p><strong>IC (In Character):</strong> Todo lo que sucede dentro del rol.</p>
+            <p><strong>OOC (Out of Character):</strong> Todo lo que está fuera del rol.</p>
+            <p><strong>CK (Character Kill):</strong> Muerte total del personaje, con pérdida de progreso.</p>
+            <!-- Añade más términos si es necesario -->
+        </div>
+
+        <button class="accordion">3. Normativas de Roleplay</button>
+        <div class="panel">
+            <p><strong>MG (Meta Gaming):</strong> Usar información OOC en situaciones IC.</p>
+            <p><strong>PG (Power Gaming):</strong> Realizar acciones irreales o imposibles.</p>
+            <p><strong>DM (Death Match):</strong> Matar sin motivo válido o rol previo.</p>
+            <!-- Añade más normativas si es necesario -->
+        </div>
+
+        <div class="button-container">
+            <button class="cta-button" onclick="window.location.href='https://gtarp-club.com';">Explora más</button>
+            <button class="cta-button" onclick="window.location.href='https://discord.gg/gtarp-club-1063588660018159617';">Unete a Discord</button>
+        </div>
+    </div>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
