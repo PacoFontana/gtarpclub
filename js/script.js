@@ -42,50 +42,57 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Funcionalidad de click-and-drag para el carrusel de "Nuestra Comunidad"
-const slider = document.querySelector('.community-cards');
-let isDown = false;
-let startX;
-let scrollLeft;
+document.addEventListener('DOMContentLoaded', () => { 
+  const slider = document.querySelector('.community-cards');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active'); // Opcional: para cambiar el cursor o estilo
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+  // Para evitar selección de texto, ya lo añadimos en CSS
+  // y también se previene en el evento de movimiento.
 
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active'); // Opcional: para cambiar el cursor o estilo
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    e.preventDefault(); // Prevenir selección de texto
+  });
 
-slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
 
-slider.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 2; // Multiplica para ajustar la velocidad
-  slider.scrollLeft = scrollLeft - walk;
-});
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
 
-// Opcional: habilitar funcionalidad touch para móviles
-slider.addEventListener('touchstart', (e) => {
-  isDown = true;
-  startX = e.touches[0].pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    // Ajusta el multiplicador a 1.5 para suavizar el movimiento
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
 
-slider.addEventListener('touchend', () => {
-  isDown = false;
-});
+  // Funcionalidad touch para móviles
+  slider.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
 
-slider.addEventListener('touchmove', (e) => {
-  if (!isDown) return;
-  const x = e.touches[0].pageX - slider.offsetLeft;
-  const walk = (x - startX) * 2;
-  slider.scrollLeft = scrollLeft - walk;
+  slider.addEventListener('touchend', () => {
+    isDown = false;
+  });
+
+  slider.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
 });

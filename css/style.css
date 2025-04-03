@@ -411,6 +411,13 @@ footer {
   }
 }
 
+.community-cards,
+.community-cards * {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 /* Para Chrome, Safari y Opera */
 .community-cards::-webkit-scrollbar,
 .news-carousel::-webkit-scrollbar {
@@ -433,4 +440,9 @@ footer {
 .news-carousel {
   scrollbar-width: thin; /* Scrollbar fino */
   scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Color del thumb y del track */
+}
+
+.community-cards.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
 }
