@@ -8,10 +8,9 @@
 
   <meta property="og:title" content="GTARP CLUB⁺ - La Mejor Comunidad de Roleplay en Consola">
   <meta name="description" content="Únete a GTARP Club, la mejor comunidad de GTA V Roleplay en consola. Encuentra servidores de roleplay en PSN y Xbox, conoce nuevos amigos y obtén ayuda sobre roleplay.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/PacoFontana/gtarpclub/main/images/logo2.gif"> <!-- Asegúrate de que esta URL sea pública -->
+  <meta property="og:image" content="https://github.com/PacoFontana/gtarpclub/blob/main/img/logotipo.png">
   <meta property="og:url" content="https://gtarp-club.com/">
   <meta property="og:type" content="website">
-
 
   <link rel="stylesheet" href="css/style.css">
   <!-- Librería de iconos (ejemplo: Font Awesome) -->
@@ -38,10 +37,18 @@
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>Bienvenido a GTARP CLUB<span class="plus">+</span></h1>
-      <p>LA COMUNIDAD DEFINITIVA SOBRE GTARP EN CONSOLA</p>
-      <a href="https://discord.gg/A26tGc3ddp" class="btn">
-        <i class="fa-brands fa-discord"></i> Unirse a Discord
-      </a>
+      <p id="changing-text">LA COMUNIDAD DEFINITIVA SOBRE GTARP EN CONSOLA</p>
+      <!-- Contenedor para el botón y los puntitos -->
+      <div class="btn-container">
+        <a href="https://discord.gg/A26tGc3ddp" class="btn">
+          <i class="fa-brands fa-discord"></i> Unirse a Discord
+        </a>
+        <div id="text-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
     </div>
     <div class="hero-image">
       <img src="img/logotipo.png" alt="Logo GTARP CLUB+">
@@ -53,7 +60,7 @@
     <div class="overlay"></div>
     <div class="section-content">
       <h2>Nuestra Comunidad</h2>
-      <p>Descubre todo lo que ofrecemos en GTARP CLUB+: <strong>Recursos para creadores, servidor de roleplay, lista de servidores activos, actualizaciones, normativas y mucho más</strong>.  
+      <p>Descubre todo lo que ofrecemos en GTARP CLUB+: <strong>Recursos para creadores, servidor de roleplay, lista de servidores activos, actualizaciones, normativas y mucho más</strong>.
          Navega por nuestras secciones para ver en detalle cada aspecto:</p>
       <div class="community-cards">
         <!-- Tarjeta para Lista de Servidores Activos -->
@@ -69,7 +76,7 @@
         <div class="card">
           <img src="img/noticias.png" alt="Normativas">
           <h3>Guias y Noticias</h3>
-          <p>Obten ayuda en el mundo del roleplay en consola, enterate de lo ultimo sobre GTA V.</p>
+          <p>Obten ayuda en el mundo del roleplay en consola, entérate de lo último sobre GTA V.</p>
           <a href="https://discord.gg/HxeQtn8S68" class="btn-card">
             <i class="fa-solid fa-newspaper"></i> Leer Más
           </a>
@@ -121,14 +128,13 @@
           <p>Innovación sin Límites: Desarrollar e implementar sistemas únicos que revolucionaron la experiencia de juego.</p>
         </div>
         <div class="history-item">
-          <img src="img/null.png" alt="Historia 2">
+          <img src="img/null.png" alt="Historia 3">
           <p>Comunidad Colaborativa: Crear un espacio inclusivo y unido, donde cada miembro es parte esencial del éxito.</p>
         </div>
         <div class="history-item">
-          <img src="img/null.png" alt="Historia 2">
+          <img src="img/null.png" alt="Historia 4">
           <p>Legado Duradero: Dejar una marca imborrable en el mundo del roleplay digital.</p>
         </div>
-        <!-- Agrega más items según se requiera -->
       </div>
     </div>
   </section>
@@ -142,19 +148,19 @@
       <div class="honor-cards">
         <!-- Tarjeta para el Fundador -->
         <a href="https://discord.com/users/363543708534177793" target="_blank" style="all: unset; cursor: pointer;">
-        <div class="card honor-card">
-          <img src="img/perfil1.png" alt="Fundador">
-          <h3>Fundador</h3>
-          <p>Maledetto Stronzo</p>
-        </div>
+          <div class="card honor-card">
+            <img src="img/perfil1.png" alt="Fundador">
+            <h3>Fundador</h3>
+            <p>Maledetto Stronzo</p>
+          </div>
         </a>
         <!-- Tarjeta para el Encargado/Administrador -->
         <a href="https://discord.com/users/1216607735559487519" target="_blank" style="all: unset; cursor: pointer;">
-        <div class="card honor-card">
-          <img src="img/perfil2.png" alt="Encargado">
-          <h3>Encargado</h3>
-          <p>The Cap</p>
-        </div>
+          <div class="card honor-card">
+            <img src="img/perfil2.png" alt="Encargado">
+            <h3>Encargado</h3>
+            <p>The Cap</p>
+          </div>
         </a>
       </div>
     </div>
@@ -170,7 +176,7 @@
           <img src="img/portadaEA.png" alt="Noticia 1">
           <div class="news-info">
             <h3>Nuestro propio servidor</h3>
-            <p>Creemos que llego la hora de abrir nuestro propio servidor de roleplay, unete al acceso anticipado antes que nadie y enterate de todo lo que tendra este increible proyecto</p>
+            <p>Creemos que llegó la hora de abrir nuestro propio servidor de roleplay, únete al acceso anticipado antes que nadie y entérate de todo lo que tendrá este increíble proyecto.</p>
             <a href="https://discord.gg/Ca9C5ERnkD">Leer más</a>
           </div>
         </div>
@@ -182,7 +188,6 @@
             <a href="#">Leer más</a>
           </div>
         </div>
-        <!-- Más noticias se pueden agregar -->
       </div>
     </div>
   </section>
