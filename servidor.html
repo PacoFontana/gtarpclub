@@ -2,305 +2,194 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GTARP+ - Roleplay Playstation 4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTARP⁺ - Roleplay en playstation</title>
   <link rel="icon" href="img/icono.png" type="image/png">
 
-  <meta property="og:title" content="GTARP⁺ - Acesso anticipado">
-  <meta name="description" content="Servidor de roleplay ps4 por actividad">
-  <meta property="og:image" content="https://github.com/PacoFontana/gtarpclub/blob/main/img/example.png?raw=true">
-  <meta property="og:url" content="https://gtarp-club.com/servidor">
+  <!-- Meta Tags para redes sociales -->
+  <meta property="og:title" content="GTARP CLUB⁺ - Nuestro Servidor de Roleplay">
+  <meta name="description" content="Descubre nuestro servidor de roleplay en consola. Únete y vive la experiencia única.">
+  <meta property="og:image" content="img/logotipo.png">
+  <meta property="og:url" content="https://gtarp-club.com/servidor.html">
   <meta property="og:type" content="website">
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    /* Fondo de la web con imagen y overlay oscuro */
-    body {
-      background: url('img/backgroundgtarp.png') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: white;
-    }
-    /* Capa oscurecedora */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-    /* Todo el contenido se ubica por encima del overlay */
-    .wrapper {
-      position: relative;
-      z-index: 1;
-    }
-    /* Banner Superior */
-    .banner {
-      background-color: #ffba00;
-      color: #101010;
-      padding: 15px;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    /* Sección Hero */
-    .hero {
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      font-size: 2.5em;
-      font-weight: bold;
-      text-shadow: 2px 2px 10px #000;
-    }
-    /* Contenedor principal */
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    /* Botones */
-    .btn {
-      background-color: #ffba00;
-      color: #101010;
-      padding: 15px 25px;
-      font-size: 1em;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-      margin: 15px 10px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: white;
-      color: #101010;
-    }
-    /* Carrusel */
-    .carousel {
-      position: relative;
-      max-width: 900px;
-      margin: 40px auto;
-      overflow: hidden;
-      border: 5px solid #ffba00;
-      border-radius: 10px;
-    }
-    .carousel-images {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carousel-images img {
-      width: 100%;
-      object-fit: cover;
-      transform: scale(1);
-      transition: transform 0.3s ease;
-    }
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
-    .carousel-nav button {
-      background: rgba(0, 0, 0, 0.6);
-      border: none;
-      color: white;
-      font-size: 2em;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .carousel-nav button:hover {
-      background: #ffba00;
-      color: #101010;
-    }
-    /* Sección Tutorial */
-    .tutorial {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #1a1a1a;
-      border: 2px solid #ffba00;
-      border-radius: 10px;
-      text-align: left;
-    }
-    .tutorial h2 {
-      color: #ffba00;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .tutorial ol {
-      list-style: decimal inside;
-    }
-    .tutorial li {
-      margin-bottom: 20px;
-      padding-left: 20px;
-      position: relative;
-    }
-    .tutorial li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 5px;
-      width: 10px;
-      height: 10px;
-      background-color: #ffba00;
-      border-radius: 50%;
-    }
-    .tutorial img {
-      width: 100%;
-      max-width: 300px;
-      display: block;
-      margin: 10px auto;
-      border: 2px solid #ffba00;
-      border-radius: 5px;
-    }
-    /* Footer */
-    footer {
-      background: #1a1a1a;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9em;
-      border-top: 2px solid #ffba00;
-      margin-top: 40px;
-    }
-    /* Media Queries para móviles */
-    @media (max-width: 600px) {
-      .hero {
-        height: 300px;
-        font-size: 1.8em;
-      }
-      .container, .tutorial {
-        margin: 20px auto;
-        padding: 0 10px;
-      }
-      .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-        margin: 10px 5px;
-      }
-      .carousel-nav button {
-        font-size: 1.5em;
-        padding: 5px 15px;
-      }
-    }
-  </style>
+
+  <!-- Se utiliza el mismo style.css que la web principal, y se agrega uno extra para este archivo si es necesario -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/servidor.css">
+  <!-- Librería de iconos (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="wrapper">
-    <!-- Banner de Acceso Anticipado -->
-    <div class="banner">
-      🚀 ¡Acceso Anticipado a GTARP+ YA DISPONIBLE! 🚀
-    </div>
+  <!-- HEADER (Misma estructura que en el sitio principal) -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">GTARP CLUB<span class="plus">+</span></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servidor.html">Nuestro servidor</a></li>
+        <li><a href="https://discord.com/oauth2/authorize?client_id=1257943906515943529&permissions=8&integration_type=0&scope=bot">Nuestro bot</a></li>
+        <li><a href="normativas.html">Normativas RP</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Sección Hero -->
-    <section class="hero">
-      ¡El mejor servidor de Roleplay en Consola!
+  <main>
+    <!-- 1. Presentación + Trailer -->
+    <section class="presentacion section-bg" style="background-image: url('img/bg-server1.png');">
+      <div class="overlay"></div>
+      <div class="section-content presentacion-content">
+        <!-- Primera fila: presentación (texto a la izquierda, imagen a la derecha) -->
+        <div class="row row-1">
+          <div class="col col-text">
+            <h2>Bienvenido a GTARP+</h2>
+            <p>
+              Descubre la experiencia única de gta roleplay en consola. Nuestro servidor ofrece eventos, sistemas unicos y una comunidad comprometida.
+            </p>
+          </div>
+          <div class="col col-image">
+            <!-- Placeholder para imagen 3D (personaje) -->
+            <img src="img/logotipoRP.png" alt="Personaje 3D">
+          </div>
+        </div>
+        <!-- Segunda fila (en espejo): imagen a la izquierda, video trailer a la derecha -->
+        <div class="row row-2">
+          <div class="col col-image">
+            <img src="img/null.png" alt="Personaje 3D">
+          </div>
+          <div class="col col-video">
+            <div class="video-container">
+              <!-- Embed de YouTube; sustituir VIDEO_ID por el ID real -->
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Contenedor Principal -->
-    <div class="container" id="inicio">
-      <p>Sumérgete en el roleplay más realista y emocionante jamás creado para <strong>Grand Theft Auto V en PS4</strong>. ¡Esta es la oportunidad de formar parte de la revolución en el mundo del roleplay en consola!</p>
-      <a href="https://discord.gg/Ca9C5ERnkD" class="btn">Unirme Ahora</a>
-      <a href="https://gtarp-club.com/" class="btn">Conocer Más</a>
-    </div>
-
-    <!-- Carrusel de Imágenes -->
-    <div class="carousel" id="galeria">
-      <div class="carousel-images" id="carouselImages">
-        <img src="img/example.png" alt="Portada GTARP+">
-        <!-- Puedes agregar más imágenes al carrusel -->
+    <!-- 2. Tutorial para registrarse -->
+    <section class="tutorial section-bg" style="background-image: url('img/bg-server2.png');">
+      <div class="overlay"></div>
+      <div class="section-content">
+        <h2>¿Cómo ingresar?</h2>
+        <p>Te lo mostramos en 5 simples pasos:</p>
+        <div class="tutorial-steps">
+          <!-- Cada paso es una tarjeta con imagen, título, descripción y botón (si corresponde) -->
+          <div class="step-card">
+            <h3>Paso 1</h3>
+            <p>Ingresa al servidor haciendo clic en el botón.</p>
+            <a href="https://discord.gg/A26tGc3ddp" class="btn">Unirse</a>
+            <img src="img/servidores.png" alt="Paso 1">
+          </div>
+          <div class="step-card">
+            <h3>Paso 2</h3>
+            <p>Lee las normativas de rol para conocer las reglas.</p>
+            <a href="normativas.html" class="btn">Leer normativas</a>
+            <img src="img/recursos.png" alt="Paso 2">
+          </div>
+          <div class="step-card">
+            <h3>Paso 3</h3>
+            <p>Dirígete al canal <strong>Registrarse</strong> y usa el comando <code>!cdni (nombre) (apellido)</code>.</p>
+            <img src="img/example2.png" alt="Paso 3">
+            <img src="img/example3.png" alt="Paso 3">
+          </div>
+          <div class="step-card">
+            <h3>Paso 4</h3>
+            <p>Revisa el canal <strong>Avisos de rol</strong>; cuando inicie un rol recibirás una ID para agregar como amigo.</p>
+            <img src="img/avisosrol.png" alt="Paso 4">
+          </div>
+          <div class="step-card">
+            <h3>Paso 5</h3>
+            <p>¡Disfruta de un buen rol!</p>
+            <img src="img/noticias.png" alt="Paso 5">
+          </div>
+        </div>
       </div>
-      <div class="carousel-nav">
-        <button onclick="prevSlide()">❮</button>
-        <button onclick="nextSlide()">❯</button>
-      </div>
-    </div>
-
-    <!-- Sección Tutorial -->
-    <section class="tutorial" id="tutorial">
-      <h2>¿Cómo comenzar a jugar?</h2>
-      <ol>
-        <li>
-          <strong>Unirse al servidor mediante Discord.</strong>
-          <br>
-          Haz clic en el botón para unirte:
-          <a href="https://discord.gg/Ca9C5ERnkD" class="btn">Unirme</a>
-        </li>
-        <li>
-          <strong>Leer las normativas.</strong>
-          <a href="normativas.html" class="btn">Leer normativas</a>
-          <br>
-          Es importante que conozcas todas las reglas. Consulta las normativas:
-        </li>
-        <li>
-          <strong>Dentro de Discord, dirigirse al apartado "crear-dni".</strong>
-          <br>
-          Utiliza el comando <code>!cdni (nombre) (apellido) (fecha) (nacionalidad) (sexo)</code> para crear tu DNI.
-          <br>
-          <img src="img/example2.png" alt="Comando !cdni">
-          <img src="img/example3.png" alt="Comando !cdni">
-        </li>
-        <li>
-          <strong>Ir al apartado de ID-PSN.</strong>
-          <br>
-          Escribe tu nombre de usuario de PlayStation 4 en el canal correspondiente.
-          <br>
-          <img src="img/example1.png" alt="ID-PSN">
-          <img src="img/example4.png" alt="ID-PSN">
-        </li>
-        <li>
-          <strong>¡Listo!</strong>
-          <br>
-          Solo queda esperar a ser aceptado para ingresar al servidor.
-        </li>
-      </ol>
     </section>
 
-    <!-- Footer -->
-    <footer id="contacto">
-      <p>© 2025 GTARP CLUB+. Todos los derechos reservados.</p>
-    </footer>
-  </div>
+    <!-- 3. Mejores videos hechos por nuestros jugadores (Creadores destacados) -->
+    <section class="videos section-bg" style="background-image: url('img/bg-server3.png');">
+      <div class="overlay"></div>
+      <div class="section-content">
+        <h2>Creadores Destacados</h2>
+        <div class="video-carousel">
+          <!-- Cada elemento es un contenedor con un embed de YouTube; deslizable con tacto o click-drag --> 
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <!-- Agrega más video-items según se requiera --> 
+        </div>
+      </div>
+    </section>
 
-  <script>
-    const carouselImages = document.getElementById('carouselImages');
-    const images = carouselImages.getElementsByTagName('img');
-    let currentIndex = 0;
+    <!-- 4. Administradores destacados -->
+    <section class="admins section-bg" style="background-image: url('img/bg-server4.png');">
+      <div class="overlay"></div>
+      <div class="section-content">
+        <h2>Nuestro equipo</h2>
+        <div class="admin-cards">
+          <div class="admin-card">
+            <img src="img/perfil1.png" alt="Admin 1">
+            <h3>Maledetto Stronzo</h3>
+            <p>Fundador</p>
+          </div>
+          <!--Agregar mas aqui-->
+          <div class="admin-card">
+            <img src="img/perfil3.png" alt="Admin 2">
+            <h3>Tuloko</h3>
+            <p>Encargado</p>
+          </div>
+          <!--Agregar mas aqui-->
+          <div class="admin-card">
+            <img src="img/perfil4.png" alt="Admin 3">
+            <h3>Vacio</h3>
+            <p>Administrador</p>
+          </div>
+          <!-- Agrega más tarjetas de admin si es necesario --> 
+        </div>
+      </div>
+    </section>
 
-    function showSlide(index) {
-      if (index >= images.length) currentIndex = 0;
-      else if (index < 0) currentIndex = images.length - 1;
-      else currentIndex = index;
-      carouselImages.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
-    }
+    <!-- 5. Últimas actualizaciones -->
+    <section class="actualizaciones section-bg" style="background-image: url('img/bg-server6.png');">
+      <div class="overlay"></div>
+      <div class="section-content">
+        <h2>Últimas Actualizaciones</h2>
+        <div class="updates-carousel">
+          <div class="update-item">
+            <img src="img/update1.png" alt="Actualización 1">
+            <h3>DEV BLOG #1</h3>
+            <p>Aun nada.</p>
+            <a href="#" class="btn">Leer más</a>
+          </div>
+          <div class="update-item">
+            <img src="img/update2.png" alt="Actualización 2">
+            <h3>DEV BLOG #2</h3>
+            <p>Aun nada.</p>
+            <a href="#" class="btn">Leer más</a>
+          </div>
+          <!-- Agrega más update-items según se requiera --> 
+        </div>
+      </div>
+    </section>
+  </main>
 
-    function nextSlide() {
-      showSlide(currentIndex + 1);
-    }
+  <!-- FOOTER (mismo estilo que en la web principal) -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 GTARP CLUB+ - Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="https://discord.gg/A26tGc3ddp" target="_blank"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://youtube.com/@gtarp-club?si=TeD6NRGEoBACLy5e" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 
-    function prevSlide() {
-      showSlide(currentIndex - 1);
-    }
-
-    // Cambio automático cada 5 segundos
-    setInterval(nextSlide, 5000);
-  </script>
+  <!-- Script específico para este archivo (por ejemplo, para carruseles) --> 
+  <script src="js/servidor.js"></script>
 </body>
 </html>
