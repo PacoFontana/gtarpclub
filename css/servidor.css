@@ -2,6 +2,10 @@
 /* ESTILOS ESPECÍFICOS PARA SERVIDOR */
 /* =============================== */
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* Presentación + Trailer */
 .presentacion .presentacion-content {
     max-width: 1200px;
@@ -161,22 +165,34 @@
   
   /* Ajustes de responsividad específicos para servidor.html */
   @media (max-width: 768px) {
+    /* Aseguramos que cada fila se muestre en columna y centrada */
     .presentacion .row {
       flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
+    /* Forzamos que cada columna use 100% del ancho disponible */
     .presentacion .col {
+      width: 100%;
       padding: 10px;
     }
-    .tutorial-steps {
-      grid-template-columns: 1fr;
+    /* Las imágenes se adaptan a su contenedor */
+    .presentacion .col img {
+      max-width: 100%;
+      height: auto;
     }
-    .video-item iframe {
-      height: 180px;
+    /* Aseguramos que el contenedor del video se ajuste bien */
+    .video-container {
+      width: 100%;
+      height: auto;
+      padding-bottom: 56.25%; /* Mantiene la relación 16:9; puedes ajustarlo si es necesario */
+      position: relative;
     }
-    .updates-carousel,
-    .video-carousel {
-      flex-direction: column;
-      align-items: center;
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
-  }
-  
+  }  
