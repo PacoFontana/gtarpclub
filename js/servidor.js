@@ -28,3 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+// Testeo en linea
+const guildID = '1356324389326426286'; // Reemplaza con el ID real de tu servidor
+
+fetch(`https://discord.com/api/guilds/${guildID}/widget.json`)
+  .then(response => response.json())
+  .then(data => {
+    // Muestra el número de usuarios online
+    document.getElementById('online-count2').textContent = data.presence_count;0
+    // Puedes extraer otros datos y mostrarlos según tu necesidad
+  })
+  .catch(error => {
+    console.error('Error al cargar el widget de Discord:', error);
+    document.getElementById('online-count2').textContent = 'Error';
+  });
+// Testeo en linea

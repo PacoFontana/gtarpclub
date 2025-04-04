@@ -104,7 +104,7 @@ fetch(`https://discord.com/api/guilds/${guildID}/widget.json`)
   .then(response => response.json())
   .then(data => {
     // Muestra el número de usuarios online
-    document.getElementById('online-count').textContent = data.presence_count;
+    document.getElementById('online-count').textContent = data.presence_count;0
     // Puedes extraer otros datos y mostrarlos según tu necesidad
   })
   .catch(error => {
