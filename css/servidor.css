@@ -162,7 +162,7 @@ html, body {
   .update-item p {
     margin-bottom: 15px;
   }
-  
+
   /* Ajustes de responsividad específicos para servidor.html */
   @media (max-width: 768px) {
     /* Aseguramos que cada fila se muestre en columna y centrada */
